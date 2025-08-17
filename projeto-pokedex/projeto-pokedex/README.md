@@ -1,11 +1,33 @@
-# Sample Snack app
+# Desenvolvimento de uma Pokédex em React Native
 
-Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by scanning the **QR code** or use the iOS or Android emulators. When you're done, click **Save** and share the link!
+Este projeto tem como objetivo o desenvolvimento de uma **Pokédex interativa** utilizando **React Native** com o ambiente de execução **Expo Go**, permitindo rodar a aplicação tanto em dispositivos móveis quanto no navegador via **Expo Web**. 
 
-When you're ready to see everything that Expo provides (or if you want to use your own editor) you can **Download** your project and use it with [expo cli](https://docs.expo.dev/get-started/installation/#expo-cli)).
+---
 
-All projects created in Snack are publicly available, so you can easily share the link to this project via link, or embed it on a web page with the `<>` button.
+## 🚀 Tecnologias Utilizadas  
+- ⚛️ **React Native**  
+- 📦 **Expo Go** (mobile e web)  
+- 🌐 **PokéAPI** ([pokeapi.co](https://pokeapi.co/))  
+- 🧭 **React Navigation**  
+- 🎨 **StyleSheet** para estilização
 
-If you're having problems, you can tweet to us [@expo](https://twitter.com/expo) or ask in our [forums](https://forums.expo.dev/c/expo-dev-tools/61) or [Discord](https://chat.expo.dev/).
+ ---
 
-Snack is Open Source. You can find the code on the [GitHub repo](https://github.com/expo/snack).
+ ---
+
+## 📡 Integração com a API  
+
+A **PokéAPI** foi utilizada para fornecer informações completas como:  
+- Nome  
+- Tipos  
+- Habilidades  
+- Imagens oficiais  
+
+A comunicação foi feita com `fetch`, recebendo os dados em **JSON** e exibindo-os dinamicamente nos componentes da aplicação.  
+
+```javascript
+useEffect(() => {
+  fetch("https://pokeapi.co/api/v2/pokemon/1")
+    .then(res => res.json())
+    .then(data => setPokemon(data));
+}, []);
